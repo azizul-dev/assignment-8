@@ -52,7 +52,7 @@ const NavBar = () => {
   </div>
 
   {/* Text */}
-  <h1 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
+  <h1 className="hidden md:block text-2xl font-extrabold bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
     SkillSphere
   </h1>
 
