@@ -1,3 +1,4 @@
+import CourseSearch from "@/components/CourseSearch";
 import TopCoursesCart from "@/components/TopCoursesCart";
 import React from "react";
 
@@ -26,7 +27,7 @@ const CoursesPage = async () => {
           Design
         </button>
       </div>
-
+      <CourseSearch allCourses={allCourses} />
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
         {allCourses.map(course => (
