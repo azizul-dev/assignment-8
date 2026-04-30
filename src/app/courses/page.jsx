@@ -28,7 +28,7 @@ const CoursesPage = async () => {
       </div>
 
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
         {allCourses.map(course => (
           <TopCoursesCart key={course.id} topCart={course} />
         ))}

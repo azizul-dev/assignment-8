@@ -22,11 +22,11 @@ const CoursesDetail = async ({ params }) => {
   return (
     <div className="bg-gray-50 min-h-screen">
 
-      {/* HERO */}
+      
       <div className="bg-gradient-to-r from-green-600 via-emerald-500 to-teal-500 text-white py-12">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
 
-          {/* LEFT */}
+          
           <div className="space-y-4">
             <span className="bg-white/20 px-3 py-1 rounded-full text-sm">{course.category}</span>
             <h1 className="text-4xl font-bold">{course.title}</h1>
@@ -53,7 +53,7 @@ const CoursesDetail = async ({ params }) => {
             </div>
           </div>
 
-          {/* RIGHT */}
+          
           <div className="relative h-[300px] rounded-2xl overflow-hidden shadow-2xl">
             <Image src={course.image} alt={course.title} fill className="object-cover" />
           </div>
@@ -61,13 +61,13 @@ const CoursesDetail = async ({ params }) => {
         </div>
       </div>
 
-      {/* BODY */}
+      
       <div className="container mx-auto px-4 py-10 grid lg:grid-cols-3 gap-8">
 
-        {/* LEFT MAIN */}
+        
         <div className="lg:col-span-2 space-y-6">
 
-          {/* CURRICULUM */}
+          
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h2 className="text-xl font-bold mb-4">Course Curriculum</h2>
             <div className="space-y-2">
@@ -83,7 +83,7 @@ const CoursesDetail = async ({ params }) => {
             </div>
           </div>
 
-          {/* WHAT YOU'LL LEARN */}
+          
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h2 className="text-xl font-bold mb-4">What You&apos;ll Learn</h2>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -96,7 +96,7 @@ const CoursesDetail = async ({ params }) => {
             </div>
           </div>
 
-          {/* INSTRUCTOR */}
+
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h2 className="text-xl font-bold mb-4">Instructor</h2>
             <div className="flex items-center gap-4">
@@ -111,7 +111,7 @@ const CoursesDetail = async ({ params }) => {
 
         </div>
 
-        {/* SIDEBAR */}
+
         <div className="lg:col-span-1">
           <div className="sticky top-6 bg-white rounded-2xl shadow-lg border border-gray-100 p-5 space-y-4">
 
