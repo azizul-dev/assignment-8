@@ -12,7 +12,7 @@ const PopularCourses = async () => {
   return (
     <div className=' container mx-auto py-10'>
         <h2 className=' font-bold text-3xl text-center md:text-left'>Top Courses</h2>
-        <div className="grid md:grid-cols-3 gap-6 py-5">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {topCourses.map(tc => 
                 <TopCoursesCart key={tc.id} topCart={tc}/>
             )}

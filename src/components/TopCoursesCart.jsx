@@ -4,7 +4,7 @@ import { IoIosStar } from "react-icons/io";
 
 const TopCoursesCart = ({ topCart }) => {
   return (
-    <div className="rounded-2xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg hover:shadow-2xl transition duration-300 group">
+    <div className="rounded-2xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg hover:shadow-2xl transition duration-300 group px-4 py-10">
 
   
       <div className="relative w-full h-52 overflow-hidden">
