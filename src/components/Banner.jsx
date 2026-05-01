@@ -90,6 +90,7 @@ const HeroSlider = () => {
           ))}
         </Swiper>
       </div>
+      
     </div>
   );
 };
