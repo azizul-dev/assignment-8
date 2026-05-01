@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const PoppinsFont = Poppins({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <NavBar/>
         {children}
         <Footer/>
+        <ToastContainer position="top-right" autoClose={3000} />
         </body>
     </html>
   );
