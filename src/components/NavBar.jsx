@@ -74,9 +74,9 @@ const NavBar = () => {
             <Image src="/images/logo.svg" alt="logo" width={24} height={24} />
           </div>
 
-          <h1 className="hidden md:block text-2xl font-extrabold bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
+          <Link href="/"><h1 className=" cursor-pointer hidden md:block text-2xl font-extrabold bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
             SkillSphere
-          </h1>
+          </h1></Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
