@@ -73,7 +73,7 @@ const TopCoursesCart = ({ topCart }) => {
             ${topCart.price}
           </p>
 
-          <Link href={`/courses/${topCart.id}`}><button className="px-4 py-2 text-sm rounded-lg bg-gradient-to-r from-emerald-400 to-green-600 text-white hover:scale-105 transition">
+          <Link href={`/courses/${topCart.id}`}><button className=" cursor-pointer px-4 py-2 text-sm rounded-lg bg-gradient-to-r from-emerald-400 to-green-600 text-white hover:scale-105 transition">
             View
           </button></Link>
         </div>

@@ -82,7 +82,7 @@ const LoginPage = () => {
        
         <button
           onClick={handleGoogleSignIn}
-          className="w-full flex items-center justify-center gap-3 py-3 rounded-xl text-sm font-medium transition-all mb-6"
+          className="cursor-pointer w-full flex items-center justify-center gap-3 py-3 rounded-xl text-sm font-medium transition-all mb-6"
           style={{
             border: "0.5px solid rgba(134,239,172,0.25)",
             background: "rgba(255,255,255,0.06)",
@@ -202,7 +202,7 @@ const LoginPage = () => {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all mt-1"
+            className=" cursor-pointer w-full py-3 rounded-xl text-sm font-semibold text-white transition-all mt-1"
             style={{ background: "linear-gradient(135deg, #22c55e, #10b981)" }}
           >
             Sign In →
