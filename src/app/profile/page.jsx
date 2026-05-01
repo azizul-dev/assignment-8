@@ -8,6 +8,7 @@ import Image from "next/image";
 import { format } from "date-fns";
 import UpdateProfile from "@/components/UpdateProfile";
 
+
 const ProfilePage = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
@@ -44,6 +45,7 @@ const ProfilePage = () => {
   const memberSince = user?.createdAt
     ? format(new Date(user.createdAt), "MMMM yyyy")
     : "Recently Joined";
+
   return (
     <div className="min-h-screen px-4 py-10 bg-gradient-to-br from-[#07130c] via-[#0f2d14] to-[#07130c]">
       <div className="max-w-3xl mx-auto">
