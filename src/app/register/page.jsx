@@ -1,18 +1,38 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
 
 const RegisterPage = () => {
-  const { register, handleSubmit, watch, formState: {errors} } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  const handleRegisterFunction = (data) => {
-    console.log(data)
-    const {email, name, photo, password} = data;
+  const handleRegisterFunction = async (formdata) => {
+    console.log(formdata);
+    const { email, name, photo, password } = formdata;
     // e.preventDefault();
     // const email = e.target.email.value
     // const password = e.target.password.value
+
+    const { data, error } = await authClient.signUp.email({
+      name: name, // required
+      email: email, // required
+      password: password, // required
+      image: photo,
+      callbackURL: "/",
+    });
+    if (error) {
+      alert(error.message);
+    }
+    if (data) {
+      alert("Signup Successful");
+    }
   };
 
   return (
@@ -31,20 +51,11 @@ const RegisterPage = () => {
               type="text"
               className="input"
               placeholder="Type here name"
-              {...register("name", { required: "Name field is required", })}
+              {...register("name", { required: "Name field is required" })}
             />
-            { errors.name && <p className=" text-red-500">{errors.name.message}</p>}
-          </fieldset>
-
-          <fieldset className="fieldset">
-            <legend className="fieldset-legend">Photo URL</legend>
-            <input
-              type="text"
-              className="input"
-              placeholder="Type here photo url"
-              {...register("email", { required: "Email field is required", })}
-            />
-            { errors.email && <p className=" text-red-500">{errors.email.message}</p>}
+            {errors.name && (
+              <p className=" text-red-500">{errors.name.message}</p>
+            )}
           </fieldset>
 
           <fieldset className="fieldset">
@@ -53,12 +64,29 @@ const RegisterPage = () => {
               type="email"
               className="input"
               placeholder="Type here email"
-              {...register("photo", { required: "Photo URL field is required", })}
+              {...register("email", {
+                required: "Email field is required",
+              })}
             />
-            { errors.photo && <p className=" text-red-500">{errors.photo.message}</p>}
+            {errors.email && (
+              <p className=" text-red-500">{errors.email.message}</p>
+            )}
           </fieldset>
 
-
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Photo URL</legend>
+            <input
+              type="text"
+              className="input"
+              placeholder="Type here photo url"
+              {...register("photo", {
+                required: "Photo URL field is required",
+              })}
+            />
+            {errors.photo && (
+              <p className=" text-red-500">{errors.photo.message}</p>
+            )}
+          </fieldset>
 
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Password</legend>
@@ -66,12 +94,16 @@ const RegisterPage = () => {
               type="password"
               className="input"
               placeholder="Type here password"
-              {...register("password", { required: "Password field is required", })}
+              {...register("password", {
+                required: "Password field is required",
+              })}
             />
-            { errors.password && <p className=" text-red-500">{errors.password.message}</p>}
+            {errors.password && (
+              <p className=" text-red-500">{errors.password.message}</p>
+            )}
           </fieldset>
           <button className=" cursor-pointer w-full px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:scale-105 transition">
-           Register
+            Register
           </button>
         </form>
       </div>
