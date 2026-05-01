@@ -12,6 +12,10 @@ const NavBar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleLogOut = async () =>{
+    await authClient.signOut();
+  }
+
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -96,13 +100,8 @@ const NavBar = () => {
               />
             </div>
           </div>
-          <button
-            onClick={() =>
-              authClient.signOut({
-                fetchOptions: { onSuccess: () => (window.location.href = "/") },
-              })
-            }
-            className="px-6 py-3 cursor-pointer rounded-xl bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:scale-105 transition"
+          <button onClick={handleLogOut}
+            className=" cursor-pointer px-6 py-3 cursor-pointer rounded-xl bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:scale-105 transition"
           >
             LogOut
           </button>
