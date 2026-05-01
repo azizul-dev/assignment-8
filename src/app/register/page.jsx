@@ -7,8 +7,9 @@ import { useForm } from "react-hook-form";
 const RegisterPage = () => {
   const { register, handleSubmit, watch, formState: {errors} } = useForm();
 
-  const handleLoginFunction = (data) => {
+  const handleRegisterFunction = (data) => {
     console.log(data)
+    const {email, name, photo, password} = data;
     // e.preventDefault();
     // const email = e.target.email.value
     // const password = e.target.password.value
@@ -18,22 +19,47 @@ const RegisterPage = () => {
     <div className=" container mx-auto min-h-[90vh] flex justify-center items-center">
       <div className=" p-4 rounded-xl">
         <h2 className=" font-bold text-2xl text-center mb-6">
-          Login Your Account
+          Register Your Account
         </h2>
         <form
-          onSubmit={handleSubmit(handleLoginFunction)}
+          onSubmit={handleSubmit(handleRegisterFunction)}
           className=" space-y-4"
         >
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Name</legend>
+            <input
+              type="text"
+              className="input"
+              placeholder="Type here name"
+              {...register("name", { required: "Name field is required", })}
+            />
+            { errors.name && <p className=" text-red-500">{errors.name.message}</p>}
+          </fieldset>
+
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Photo URL</legend>
+            <input
+              type="text"
+              className="input"
+              placeholder="Type here photo url"
+              {...register("email", { required: "Email field is required", })}
+            />
+            { errors.email && <p className=" text-red-500">{errors.email.message}</p>}
+          </fieldset>
+
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Email</legend>
             <input
               type="email"
               className="input"
               placeholder="Type here email"
-              {...register("email", { required: "Email field is required", })}
+              {...register("photo", { required: "Photo URL field is required", })}
             />
-            { errors.email && <p className=" text-red-500">{errors.email.message}</p>}
+            { errors.photo && <p className=" text-red-500">{errors.photo.message}</p>}
           </fieldset>
+
+
+
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Password</legend>
             <input
@@ -45,15 +71,9 @@ const RegisterPage = () => {
             { errors.password && <p className=" text-red-500">{errors.password.message}</p>}
           </fieldset>
           <button className=" cursor-pointer w-full px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:scale-105 transition">
-            Login
+           Register
           </button>
         </form>
-        <p className=" mt-4">
-          Do not have an account?{" "}
-          <Link className=" text-blue-500" href="/register">
-            Register
-          </Link>
-        </p>
       </div>
     </div>
   );
