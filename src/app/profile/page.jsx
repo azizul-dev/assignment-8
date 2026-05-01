@@ -1,11 +1,12 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import Link from "next/link";
+
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { format } from "date-fns";
+import UpdateProfile from "@/components/UpdateProfile";
 
 const ProfilePage = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -46,9 +47,9 @@ const ProfilePage = () => {
   return (
     <div className="min-h-screen px-4 py-10 bg-gradient-to-br from-[#07130c] via-[#0f2d14] to-[#07130c]">
       <div className="max-w-3xl mx-auto">
-        {/* HEADER */}
+      
         <div className="flex items-center gap-6 p-8 rounded-3xl backdrop-blur-xl bg-white/5 border border-green-400/20 shadow-lg">
-          {/* Avatar */}
+       
           {user.image ? (
             <div className="relative w-20 h-20">
               <Image
@@ -65,7 +66,7 @@ const ProfilePage = () => {
             </div>
           )}
 
-          {/* Info */}
+        
           <div>
             <h1 className="text-2xl font-bold text-white">{user.name}</h1>
             <p className="text-green-200/70 text-sm">{user.email}</p>
@@ -93,14 +94,14 @@ const ProfilePage = () => {
           ))}
         </div>
 
-        {/* ACCOUNT INFO */}
+        
         <div className="mt-6 p-6 rounded-2xl bg-white/5 border border-green-400/20">
           <h3 className="text-xs uppercase tracking-widest text-green-200/50 mb-4">
             Account Info
           </h3>
 
           {[
-            { label: "Full Name", value: user.name },
+            { label: "Full Name", value: user.name || "Not set" },
             { label: "Email", value: user.email },
             { label: "Member Since", value: memberSince },
             {
@@ -123,17 +124,14 @@ const ProfilePage = () => {
           ))}
         </div>
 
-        {/* ACTIONS */}
+       
         <div className="mt-6 p-6 rounded-2xl bg-white/5 border border-green-400/20">
           <h3 className="text-xs uppercase tracking-widest text-green-200/50 mb-4">
             Actions
           </h3>
 
-          <Link href="/profile/update">
-            <button className="w-full py-3 mb-3 rounded-xl bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold hover:scale-105 transition">
-              Update Profile
-            </button>
-          </Link>
+          
+          
 
           <button
             onClick={handleLogOut}
@@ -141,6 +139,7 @@ const ProfilePage = () => {
           >
             Logout
           </button>
+          <UpdateProfile/>
         </div>
       </div>
     </div>
