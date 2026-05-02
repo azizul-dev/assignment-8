@@ -89,8 +89,8 @@ const NavBar = () => {
             <div className="w-10 rounded-full ring ring-emerald-400 ring-offset-2">
               <Image
                 src={
-                  user.image 
-                  
+                  user.image ||
+                  `https://ui-avatars.com/api/?name=${user.name}&background=22c55e&color=fff`
                 }
                 alt={user.name}
                 width={40}

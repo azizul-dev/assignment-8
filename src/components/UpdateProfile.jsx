@@ -14,7 +14,8 @@ const UpdateProfile = () => {
   const currentAvatar =
     !imgError && user?.image
       ? user.image
-      : ""
+      :`https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "User")}&background=22c55e&color=fff`
+
 
   const onSubmit = async (e) => {
     e.preventDefault();
