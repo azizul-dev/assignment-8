@@ -27,24 +27,24 @@ const CoursesDetail = async ({ params }) => {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center ">
 
           
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <span className="bg-white/20 px-3 py-1 rounded-full text-sm">{course.category}</span>
             <h1 className="text-4xl font-bold">{course.title}</h1>
             <p className="text-green-50 text-sm">{course.description}</p>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2">
               <IoIosStar className="text-yellow-300" />
               <span className="font-bold">{course.rating}</span>
               <span className="text-green-100 text-sm">({course.totalStudents.toLocaleString()} students)</span>
             </div>
 
-            <div className="flex gap-5 text-sm text-green-100">
+            <div className="flex justify-center md:justify-start gap-5 text-sm text-green-100">
               <span className="flex items-center gap-1"><IoTimeOutline />{course.duration}</span>
               <span className="flex items-center gap-1"><IoBarChartOutline />{course.level}</span>
               <span className="flex items-center gap-1"><IoPeopleOutline />{course.totalStudents.toLocaleString()}+</span>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center justify-center md:justify-start gap-3 pt-2">
               <Image src={course.instructorImage} alt={course.instructor} width={40} height={40} className="rounded-full ring-2 ring-white/40" />
               <div>
                 <p className="text-xs text-green-200">Instructor</p>
