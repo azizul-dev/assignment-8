@@ -39,7 +39,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm container mx-auto">
+    <div className="navbar sticky top-0 z-50 bg-base-100 shadow-sm container mx-auto">
       <div className="navbar-start">
         <div className=" relative">
           <div
