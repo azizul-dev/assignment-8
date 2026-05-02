@@ -1,8 +1,6 @@
-import { createAuthClient } from "better-auth/react";
-
+import { createAuthClient } from "better-auth/react"
 export const authClient = createAuthClient({
-  baseURL:
-    process.env.NODE_ENV === "production"
-      ? "https://assignment-8-eta-two.vercel.app"
-      : "http://localhost:3000",
-});
+    /** The base URL of the server (optional if you're using the same domain) */
+    baseURL: "https://assignment-8-eta-two.vercel.app"
+})
+export const { signIn, signUp, useSession } = createAuthClient()

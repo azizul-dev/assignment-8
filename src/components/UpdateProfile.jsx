@@ -14,7 +14,7 @@ const UpdateProfile = () => {
   const currentAvatar =
     !imgError && user?.image
       ? user.image
-      : `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "User")}&background=22c55e&color=fff`;
+      : ""
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +29,7 @@ const UpdateProfile = () => {
 
   return (
     <>
-      {/* ── Trigger Button ── */}
+     
       <label
         htmlFor="update_modal"
         className="btn w-full py-2 mt-3 text-center rounded-xl cursor-pointer
@@ -44,7 +44,7 @@ const UpdateProfile = () => {
       <div className="modal">
         <div className="modal-box bg-[#0f2d14] text-white border border-green-400/20 backdrop-blur-xl">
 
-          {/* ── Current user info (সবসময় দেখাবে) ── */}
+         
           <div className="flex flex-col items-center gap-2 mb-6">
             <div className="relative w-20 h-20 rounded-full ring-2 ring-emerald-400 ring-offset-2 ring-offset-[#0f2d14] overflow-hidden">
               <Image
@@ -61,7 +61,7 @@ const UpdateProfile = () => {
 
           <div className="divider divider-success opacity-30 my-2" />
 
-          {/* ── Form ── */}
+          
           <form onSubmit={onSubmit} className="space-y-4 mt-4">
             <input
               name="name"
@@ -79,7 +79,7 @@ const UpdateProfile = () => {
               onChange={(e) => setPreview(e.target.value)}
             />
 
-            {/* Preview */}
+            
             {preview ? (
               <div className="flex flex-col items-center gap-1">
                 <p className="text-xs text-green-400/60">Preview</p>
@@ -97,14 +97,14 @@ const UpdateProfile = () => {
             )}
 
             <div className="flex gap-2 pt-2">
-              {/* Cancel */}
+             
               <label
                 htmlFor="update_modal"
                 className="btn flex-1 border border-green-400/30 bg-transparent text-white hover:bg-green-400/10"
               >
                 Cancel
               </label>
-              {/* Save */}
+             
               <button className="btn flex-1 bg-gradient-to-r from-emerald-400 to-green-600 text-white border-none hover:scale-105 transition">
                 Save
               </button>
