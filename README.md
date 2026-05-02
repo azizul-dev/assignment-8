@@ -43,6 +43,7 @@ SkillSphere is a modern, fully responsive online learning platform where users c
 | React Hook Form | Form Handling |
 | React Toastify | Notifications |
 | date-fns | Date Formatting |
+| Swiper JS | Hero Banner Slider | 
 
 ---
 
@@ -55,6 +56,7 @@ react-hook-form
 react-toastify
 react-spinners
 date-fns
+swiper
 next
 tailwindcss
 daisyui
