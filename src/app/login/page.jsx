@@ -54,7 +54,7 @@ const LoginPage = () => {
         }}
       >
 
-        <div className="flex items-center gap-3 mb-7">
+        <div className="flex items-center gap-3 mb-7 justify-center sm:justify-start">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
             style={{ background: "linear-gradient(135deg, #22c55e, #10b981)" }}
@@ -70,12 +70,12 @@ const LoginPage = () => {
         </div>
 
         <h1
-          className="text-2xl font-bold text-green-50 mb-1"
+          className="text-2xl font-bold text-green-50 mb-1 text-center sm:text-left"
           style={{ fontFamily: "serif" }}
         >
           Welcome Back
         </h1>
-        <p className="text-sm mb-7" style={{ color: "rgba(187,247,208,0.6)" }}>
+        <p className="text-sm mb-7 text-center sm:text-left" style={{ color: "rgba(187,247,208,0.6)" }}>
           Sign in to continue your learning journey
         </p>
 

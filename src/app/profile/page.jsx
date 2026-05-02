@@ -50,10 +50,10 @@ const ProfilePage = () => {
     <div className="min-h-screen px-4 py-10 bg-gradient-to-br from-[#07130c] via-[#0f2d14] to-[#07130c]">
       <div className="max-w-3xl mx-auto">
       
-        <div className="flex items-center gap-6 p-8 rounded-3xl backdrop-blur-xl bg-white/5 border border-green-400/20 shadow-lg">
+        <div className="flex flex-col sm:flex-row items-center gap-6 p-8 rounded-3xl backdrop-blur-xl bg-white/5 border border-green-400/20 shadow-lg">
        
           {user.image ? (
-            <div className="relative w-20 h-20">
+            <div className="relative w-20 h-20 shrink-0">
               <Image
                 src={user.image}
                 alt={user.name}
@@ -118,8 +118,8 @@ const ProfilePage = () => {
               key={i}
               className="flex justify-between py-2 border-b border-green-400/10 last:border-none"
             >
-              <span className="text-green-200/60 text-sm">{row.label}</span>
-              <span className="text-green-100 text-sm font-medium">
+              <span className="text-green-200/60 text-sm shrink-0">{row.label}</span>
+              <span className="text-green-100 text-sm font-medium text-right break-all">
                 {row.value}
               </span>
             </div>

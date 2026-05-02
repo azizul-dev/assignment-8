@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import { IoIosStar } from "react-icons/io";
 import { IoTimeOutline, IoBarChartOutline, IoPeopleOutline, IoCheckmarkCircle, IoPlayCircleOutline } from "react-icons/io5";
 
@@ -24,7 +24,7 @@ const CoursesDetail = async ({ params }) => {
 
       
       <div className="bg-gradient-to-r from-green-600 via-emerald-500 to-teal-500 text-white py-12">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center ">
 
           
           <div className="space-y-4">

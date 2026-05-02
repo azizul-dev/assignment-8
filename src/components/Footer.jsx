@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,22 +10,19 @@ const Footer = () => {
       }}
     >
       <div className="container mx-auto px-4">
-        
-        {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           
-          {/* Brand */}
-          <div>
+         
+          <div className="flex flex-col items-center md:items-start"> 
             <div className="flex items-center gap-2 mb-4">
               <div className="p-2 rounded-lg bg-gradient-to-r from-emerald-400 to-green-600">
                 <Image src="/images/logo.svg" alt="logo" width={24} height={24} />
               </div>
               <h2 className="text-2xl font-extrabold text-white">SkillSphere</h2>
             </div>
-            <p className="text-emerald-200 text-sm leading-relaxed">
+            <p className="text-emerald-200 text-sm leading-relaxed text-center md:text-left"> 
               Modern online learning platform where you can upgrade your skills and learn from industry experts.
             </p>
-            {/* Social Links */}
             <div className="flex gap-3 mt-4">
               {[
                 { label: "Facebook", href: "#", icon: "f" },
@@ -47,8 +43,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
+         
+          <div className="flex flex-col"> 
             <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {[
@@ -70,8 +66,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Categories */}
-          <div>
+     
+          <div className="flex flex-col"> 
             <h3 className="text-white font-semibold text-lg mb-4">Categories</h3>
             <ul className="space-y-2">
               {["Development", "Design", "Marketing", "Data Science", "Security", "Finance"].map((cat) => (
@@ -87,8 +83,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
+        
+          <div className="flex flex-col items-center md:items-start"> 
             <h3 className="text-white font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm text-emerald-200">
               <li className="flex items-start gap-2">
@@ -107,10 +103,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
+       
         <div className="border-t border-emerald-700 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-emerald-300 text-sm">
+            <p className="text-emerald-300 text-sm text-center md:text-left"> 
               © {new Date().getFullYear()} SkillSphere. All rights reserved.
             </p>
             <div className="flex gap-6">
