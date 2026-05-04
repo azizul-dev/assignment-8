@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { HiBookOpen, HiHome, HiUser } from "react-icons/hi";
+import { toast } from "react-toastify";
 
 const NavBar = () => {
   const userData = authClient.useSession();
@@ -15,6 +16,7 @@ const NavBar = () => {
 
   const handleLogOut = async () => {
     await authClient.signOut();
+    toast.success("Logged out successfully! 👋");
   };
 
   const handleLinkClick = () => {
