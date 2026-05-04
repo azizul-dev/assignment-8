@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IoIosStar } from "react-icons/io";
 import { IoTimeOutline, IoBarChartOutline, IoPeopleOutline, IoCheckmarkCircle, IoPlayCircleOutline } from "react-icons/io5";
 
+
 const CoursesDetail = async ({ params }) => {
   const { id } = await params;
 

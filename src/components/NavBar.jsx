@@ -5,6 +5,7 @@ import NavLink from "./NavLink";
 import { useState } from "react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
+import { HiBookOpen, HiHome, HiUser } from "react-icons/hi";
 
 const NavBar = () => {
   const userData = authClient.useSession();
@@ -12,9 +13,9 @@ const NavBar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLogOut = async () =>{
+  const handleLogOut = async () => {
     await authClient.signOut();
-  }
+  };
 
   const handleLinkClick = () => {
     setIsOpen(false);
@@ -23,17 +24,26 @@ const NavBar = () => {
     <>
       <li>
         <NavLink href="/" onClick={handleLinkClick}>
-          Home
+          <span className="flex items-center gap-1">
+            <HiHome className="text-lg" />
+            Home
+          </span>
         </NavLink>
       </li>
       <li>
         <NavLink href="/courses" onClick={handleLinkClick}>
-          Courses
+          <span className="flex items-center gap-1">
+            <HiBookOpen className="text-lg" />
+            Courses
+          </span>
         </NavLink>
       </li>
       <li>
         <NavLink href="/profile" onClick={handleLinkClick}>
-          Profile
+         <span className="flex items-center gap-1">
+            <HiUser className="text-lg" /> 
+            Profile
+          </span>
         </NavLink>
       </li>
     </>
@@ -74,16 +84,17 @@ const NavBar = () => {
             <Image src="/images/logo.svg" alt="logo" width={24} height={24} />
           </div>
 
-          <Link href="/"><h1 className=" cursor-pointer hidden md:block text-2xl font-extrabold bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
-            SkillSphere
-          </h1></Link>
+          <Link href="/">
+            <h1 className=" cursor-pointer hidden md:block text-2xl font-extrabold bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
+              SkillSphere
+            </h1>
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       {user ? (
-        
         <div className="navbar-end gap-3 flex items-center">
           <div className="avatar">
             <div className="w-10 rounded-full ring ring-emerald-400 ring-offset-2">
@@ -100,14 +111,14 @@ const NavBar = () => {
               />
             </div>
           </div>
-          <button onClick={handleLogOut}
+          <button
+            onClick={handleLogOut}
             className="px-6 py-3 cursor-pointer rounded-xl bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:scale-105 transition"
           >
             LogOut
           </button>
         </div>
       ) : (
-        
         <div className="navbar-end gap-3">
           <Link href="/login">
             <button className="px-6 py-3 cursor-pointer rounded-xl bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:scale-105 transition">
